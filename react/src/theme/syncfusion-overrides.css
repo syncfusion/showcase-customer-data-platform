@@ -1,0 +1,217 @@
+/* Syncfusion Tailwind3 theme → CDP source tokens. The theme bundle is imported in
+   main.tsx (@syncfusion/ej2/tailwind3.css); these overrides map its accent,
+   surfaces and control metrics */
+
+/* Accent = brand (indigo → #3a4db3), with 4.5:1-safe text pairs. */
+:root {
+  --color-sf-primary: var(--brand);
+  --color-sf-primary-dark: var(--brand-ink);
+  --color-sf-primary-darker: #232c6e;
+  --color-sf-primary-bg-color: var(--brand-weak);
+  --color-sf-primary-border-color: var(--brand);
+  --color-sf-primary-hover: #34489f;
+  --color-sf-primary-light: #6f7fce;
+  --color-sf-primary-lighter: #b9c1e8;
+  --color-sf-primary-outline: rgba(58, 77, 179, 0.35);
+  --color-sf-focus: var(--brand);
+  --color-sf-focus-dark: var(--brand);
+  --color-sf-primary-text: #ffffff;
+}
+.e-control .e-btn,
+.e-btn.e-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.e-btn.e-primary:hover,
+.e-btn.e-primary:focus {
+  background: var(--brand-ink);
+  border-color: var(--brand-ink);
+}
+.e-btn.e-outline:hover { background: var(--surface-2); border-color: #bcc4d3; }
+
+/* Grid */
+.e-grid {
+  border: none;
+  font-size: 13px;
+}
+.e-grid .e-headercell {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.e-grid .e-headercelldiv { font-weight: 600; }
+.e-grid .e-rowcell,
+.e-grid .e-headercell {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 12px;
+  padding-right: 12px;
+  vertical-align: middle;
+}
+.e-grid .e-row { background: var(--surface); }
+.e-grid .e-row:hover .e-rowcell { background: var(--surface-2); }
+.e-grid .e-rowcell,
+.e-grid .e-headercell {
+  border-bottom-color: var(--line);
+  border-color: var(--line);
+}
+.e-grid .e-headercell { border-bottom: 1px solid var(--line); }
+.e-grid .e-gridheader { border-bottom: 1px solid var(--line); }
+.e-grid .e-content { border: none; }
+.e-grid td.num, .e-grid th.num, .e-grid .e-num { text-align: right; font-variant-numeric: tabular-nums; }
+.e-grid .e-rowcell.num, .e-grid td[class*="num"] { text-align: right; }
+.cdp-grid tr.sel .e-rowcell, .e-grid .e-row.sel .e-rowcell { background: var(--brand-weak); }
+.e-grid .e-row.cur .e-rowcell { background: var(--brand-weak); }
+
+/* DropDownList */
+.e-ddl {
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  background: var(--surface);
+  font-size: 12.5px;
+}
+.e-ddl.e-input-group .e-input-group-icon { font-size: 10px; }
+.e-popup .e-list-item, .e-popup .e-list-parent { font-size: 12.5px; }
+.e-ddl.e-popup { border-radius: var(--r-sm); }
+.e-dropdown-list .e-list-item.e-active,
+.e-dropdown-list .e-list-item:hover {
+  background: var(--brand-weak);
+  color: var(--brand-ink);
+}
+
+/* Buttons */
+.e-control.e-btn, .e-btn {
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 7px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: none;
+  text-transform: none;
+}
+.e-btn:hover { border-color: #bcc4d3; background: var(--surface-2); }
+.e-btn.e-primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.e-btn.e-primary:hover { background: var(--brand-ink); }
+.e-btn.e-small, .e-btn.e-round { font-size: 12px; padding: 5px 9px; }
+.e-btn-group .e-btn { border-radius: 6px; }
+.e-btn-group { background: #eef1f5; border-radius: 8px; padding: 3px; }
+.e-btn-group .e-btn.e-active {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+/* AutoComplete (global search) */
+.e-atc .e-input, .e-autocomplete .e-input { font-size: 13px; }
+.e-autocomplete .e-popup { border-radius: var(--r); box-shadow: 0 8px 28px rgba(22, 33, 58, 0.14); }
+.e-autocomplete .e-list-item { padding: 9px 12px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.e-autocomplete .e-list-item:last-child { border-bottom: none; }
+.e-autocomplete .e-list-item:hover,
+.e-autocomplete .e-list-item.e-active {
+  background: var(--surface-2);
+}
+.e-autocomplete .e-nodata, .e-autocomplete .e-no-data { padding: 12px; color: var(--muted); font-size: 12.5px; }
+
+/* Card (e-card CSS classes) — disable hover/active tints for display-only cards */
+.e-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+.e-card:hover, .e-card:active { border-color: var(--line); background: var(--surface); }
+.e-card .e-card-header { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.e-card .e-card-header .e-card-header-title { font-size: 13.5px; font-weight: 620; }
+.e-card .e-card-header .e-card-sub-title { font-size: 12px; color: var(--muted); }
+.e-card .e-card-content { padding: 16px; }
+.e-card .e-card-content > p { line-height: 1.5; }
+
+/* Breadcrumb in topbar */
+.e-breadcrumb { background: transparent; padding: 0; font-size: 12px; }
+.e-breadcrumb .e-breadcrumb-item a, .e-breadcrumb .e-breadcrumb-item button { color: var(--muted); font-size: 12px; }
+.e-breadcrumb .e-breadcrumb-separator { color: var(--muted); }
+.e-breadcrumb .e-breadcrumb-item.e-selected a { color: var(--ink-2); font-weight: 600; }
+
+/* Timeline (cdp-timeline cssClass) */
+.e-timeline.cdp-timeline .e-timeline-items { padding-left: 0; }
+.e-timeline.cdp-timeline .e-timeline-item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0 0 16px 0;
+  align-items: flex-start;
+}
+.e-timeline.cdp-timeline .e-timeline-item-content { padding: 0 0 0 30px; position: relative; }
+.e-timeline.cdp-timeline .e-timeline-item-dot {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--brand);
+  box-sizing: border-box;
+  margin: 0;
+  align-self: flex-start;
+}
+.e-timeline.cdp-timeline .e-timeline-item-dot::before { content: none; }
+.e-timeline.cdp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--line-strong);
+}
+.e-timeline.cdp-timeline { position: relative; margin-left: 6px; }
+.e-timeline.cdp-timeline .cdp-tl-date { font-size: 11.5px; color: var(--muted); font-family: var(--font-mono); display: block; }
+.e-timeline.cdp-timeline .cdp-tl-act { font-size: 13px; font-weight: 560; margin: 1px 0 2px; display: block; }
+.e-timeline.cdp-timeline .cdp-tl-who { font-size: 12px; color: var(--muted); display: block; }
+
+/* Chip / chip-list */
+.e-chip-list .e-chip { border: 1px solid var(--line-strong); border-radius: 7px; background: var(--surface); font-size: 12.5px; padding: 5px 10px; }
+.e-chip-list .e-chip:hover { background: var(--surface-2); }
+
+/* Sidebar fixed */
+.e-sidebar.cdp-sidebar-e { background: #101a30; }
+
+/* AI AssistView */
+.e-aiassistview.cdp-assist { background: transparent; border: none; box-shadow: none; }
+.e-aiassistview.cdp-assist .e-assist-view-header { display: none; }
+.e-aiassistview.cdp-assist .e-suggestion-list .e-suggestion-item,
+.e-aiassistview.cdp-assist .e-suggestion-chips .e-suggestion-item {
+  font-size: 12.5px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.e-aiassistview.cdp-assist .e-suggestion-chips {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px;
+}
+.e-aiassistview.cdp-assist .e-ai-assist-content { padding: 0; }
+.e-aiassistview.cdp-assist .e-views { background: transparent; }
+.e-aiassistview.cdp-assist .e-assist-view-content { background: transparent; }
+.e-aiassistview.cdp-assist .e-user-content .e-content-styling,
+.e-aiassistview.cdp-assist .e-assist-content .e-content-styling {
+  background: var(--brand-weak);
+  border-color: #d9def7;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.e-aiassistview.cdp-assist .e-assist-content .e-content-styling,
+.e-aiassistview.cdp-assist .e-response-content .e-content-styling {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.e-aiassistview.cdp-assist .e-header-toolbar { display: none; }
+
+/* Toolbar defaults off (AppBar hosts its own layout) */
+.e-appbar { background: transparent; box-shadow: none; }
